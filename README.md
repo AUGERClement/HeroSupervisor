@@ -7,10 +7,11 @@ Small toy application to demonstrate how to use a DynamicSupervisor with a Regis
 iex -S mix to start the app in interactive mode
 
 ```elixir
-{:ok, _pid} = MyApplication.start()
+{:ok, _pid} = MyApplication.start() # Necessary to start the registry
 HeroSupervisor.init(nil)
-ryu = %Hero{}
-elric = %Hero{name: "Elric", age: 20}
-HeroSupervisor.join(ryu) # return {:ok, pid}
-HeroSupervisor.join(ryu) # return {:already_on_quest, pid}
+luka = %Hero{name: "Luka", age: 18, weapon: "Halo Night Custom"}
+henrich = %Hero{name: "heinrich", age: 20, weapon: "Angel Halo"}
+HeroSupervisor.join(luka) # return {:ok, pid}
+HeroSupervisor.join(luka) # return {:already_on_quest, pid}
 ```
+
