@@ -3,7 +3,7 @@ defmodule MyApplication do
   # ...
   def start() do
     children = [
-      {HeroSupervisor, []},
+      {HeroSupervisor, ["The HeroSupervisor from MyApplication"]},
       {Registry, keys: :unique, name: HeroRegistry}
     ]
 

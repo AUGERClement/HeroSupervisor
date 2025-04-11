@@ -34,7 +34,8 @@ defmodule HeroSupervisor do
   end
 
   # Server
-  def init(name), do:
-    IO.inspect(name, label: "#{name} started supervising heros")
+  def init(name) do
+    IO.inspect("#{name} started supervising heros")
     DynamicSupervisor.init(strategy: :one_for_one)
+  end
 end
